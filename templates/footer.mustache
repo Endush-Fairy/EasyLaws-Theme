@@ -1,0 +1,113 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_easylaws/footer
+
+    Combines a custom theme design with core Moodle footer variables.
+}}
+
+<!-- START OF FOOTER -->
+<footer id="page-footer" class="page-footer">
+    <div class="site-footer">
+        <div class="footer-container">
+
+            <!-- Column 1: About & Contact -->
+            <div class="footer-col footer-about">
+               <div class="footer-logo">
+    <a href="{{{wwwroot}}}">
+        <img src="{{{wwwroot}}}/theme/easylaws/pix/EL-white.png" alt="EasyLaws Academy Logo">
+    </a>
+</div>
+                <p class="tagline">Empowering Legal Minds, Shaping the Future</p>
+                <div class="contact-details">
+                    <p class="contact-item"><i class="fas fa-phone-alt"></i> +961 70 150051</p>                    
+                        <p class="contact-item"><a href="#">support@easylaws.com</p></a>                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col footer-links">
+                <h4>COMPANY INFO</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Resource Center</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Instructor</a></li>
+                    <li><a href="#">Become A Teacher</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-links">
+                <h4>USEFUL LINKS</h4>
+                <ul>
+                <!-- Additional
+                    {{# output.page_doc_link }}
+                        <li>{{{ output.page_doc_link }}}</li>
+                    {{/ output.page_doc_link }}-->
+
+                    <li><a href="#">All Courses</a></li>
+                    <li><a href="#">Digital Marketing</a></li>
+                     <li><a href="#">Design & Branding</a></li>
+                      <li><a href="#">Storytelling & Voice Over</a></li>
+                       <li><a href="#">News & Blogs</a></li>
+                </ul>
+               <!-- Additional
+                <div class="mt-4">
+                    {{{ output.standard_footer_html }}}
+                </div>
+                -->
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bottom Copyright Bar -->
+    <div class="footer-bottom-bar">
+        <div class="footer-bottom-container">
+            <!-- Moodle login info: "You are logged in as..." -->
+            <p class="login-info">{{{ output.login_info }}}</p>
+
+            <!-- Moodle "Powered By" text -->
+            <p>{{#str}}poweredbymoodle, core{{/str}}</p>
+
+            <div class="bottom-links">
+                <a href="#">Terms Of Use</a>
+                <span>|</span>
+                <a href="#">Privacy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<div class="footer-content-debugging">
+    <div class="container-fluid footer-dark-inner">
+        {{{ output.debug_footer_html }}}
+    </div>
+</div>
+
+{{{ output.standard_end_of_body_html }}}
+
+{{#js}}
+require(['theme_easylaws/footer-popover'], function(FooterPopover) {
+    // This assumes you have a JS file for your theme's footer popover logic.
+    // If you don't use the popover buttons from the original Moodle template, this can be removed.
+    // FooterPopover.init();
+});
+{{/js}}
